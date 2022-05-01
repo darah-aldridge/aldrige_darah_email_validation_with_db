@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheets/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheets/results-style.css') }}">
+    <title>Email Results</title>
+</head>
+<body>
+    <div id="container">
+        <div id="submission">
+            <h1 class="result-header">Congrats! You've added the following email:</h1>
+            <p id="result-name">{{email.email}}</p>
+            <h2 class="result-header">All Emails:</h2>
+            {% for one_email in all_emails %}
+                <p class="result-names">{{one_email.email}}</p>
+            {% endfor %}
+            <a href="/go-back">Go Back</a>
+        </div>
+    </div>
+</body>
+</html>
